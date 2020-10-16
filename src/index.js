@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react"
+import ReactDOM from "react-dom"
+import { BrowserRouter as Router } from "react-router-dom"
+import { AnythingJoes } from "./components/AnythingJoes"
 import * as serviceWorker from './serviceWorker';
+import "./index.css"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <AnythingJoes />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
