@@ -1,74 +1,36 @@
 {
-  "type": [
-    {
-      "id": 1,
-      "type": "Joe"
-    },
-    {
-      "id": 2,
-      "type": "Seeker"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "typeId": 1,
-      "firstName": "Joseph",
-      "lastName": "Tidwell",
-      "email": "sample@test.com",
-      "picture": "profilepic.png"
-    },
-    {
-      "email": "joseph.tidwell09@gmail.com",
-      "username": "Joseph Tidwell",
-      "id": 2
-    },
-    {
-      "email": "ElZhang@kettle.com",
-      "username": "Ellen Zhang",
-      "id": 3
-    },
-    {
-      "email": "joe@jo.com",
-      "username": "looking for 1",
-      "typeId": 2,
-      "id": 4
-    },
-    {
-      "email": "adsf@adf.com",
-      "username": "asdfaf adsfadfadsf",
-      "typeId": 1,
-      "id": 5
-    },
-    {
-      "email": "joetid@mail.com",
-      "username": "joejoe tidtid",
-      "typeId": 2,
-      "id": 6
-    },
-    {
-      "email": "test@1.id.com",
-      "username": "test test",
-      "typeId": 1,
-      "id": 7
-    },
-    {
-      "email": "hereitgoes@yesyyes.com",
-      "username": "test id 2 working?",
-      "typeId": 1,
-      "id": 8
-    },
-    {
-      "email": "234FA@adf.com",
-      "username": "please god work",
-      "typeId": 2,
-      "id": 9
-    },
-    {
-      "email": "ok@hopefuly.com",
-      "username": "state? checking?",
-      "typeId": 2,
-      "id": 10
-    }
-  ]
+    "type": [
+        {
+            "id": 1,
+            "type": "Joe"
+        },
+        {
+            "id": 2,
+            "type": "Seeker"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "typeId": 1,
+            "firstName": "Joseph",
+            "lastName": "Tidwell",
+            "email": "sample@test.com",
+            "picture": "./images/profileTest.jpg"
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "body": "hey, how are you?",
+            "date": "today",
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "body": "hey, how are you?",
+            "date": "today",
+            "userId": 1
+        }
+    ]
 }
