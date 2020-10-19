@@ -4,6 +4,7 @@ import { Message } from "semantic-ui-react"
 import { Home } from "./Home"
 import { MessageProvider } from "./Messages/MessageProvider"
 import { MessagesList } from "./Messages/MessageList"
+import { MessageDetail } from "./Messages/MessageDetail"
 export const ApplicationViews = () => {
     return (
         <>
@@ -18,6 +19,11 @@ export const ApplicationViews = () => {
                 </Route>
             </MessageProvider>
 
+            <MessageProvider>
+                <Route exact path="/messages/detail/:messageId(\d+)">
+                    <MessageDetail />
+                </Route>
+            </MessageProvider>
         </>
     )
 }

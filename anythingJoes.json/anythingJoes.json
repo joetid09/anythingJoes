@@ -15,6 +15,7 @@
             "typeId": 1,
             "firstName": "Joseph",
             "lastName": "Tidwell",
+            "userName": "JoeREact",
             "email": "sample@test.com",
             "picture": "./images/profileTest.jpg"
         }
@@ -22,7 +23,8 @@
     "messages": [
         {
             "id": 1,
-            "body": "hey, how are you?",
+            "subject": "hello there!",
+            "body": "I was super into your details on dancing ispum dolar etc",
             "date": "today",
             "userId": 1
         },
