@@ -5,6 +5,7 @@ import { Home } from "./Home"
 import { MessageProvider } from "./Messages/MessageProvider"
 import { MessagesList } from "./Messages/MessageList"
 import { MessageDetail } from "./Messages/MessageDetail"
+import { MessageForm } from "./Messages/MessageForm"
 export const ApplicationViews = () => {
     return (
         <>
@@ -22,6 +23,12 @@ export const ApplicationViews = () => {
             <MessageProvider>
                 <Route exact path="/messages/detail/:messageId(\d+)">
                     <MessageDetail />
+                </Route>
+            </MessageProvider>
+
+            <MessageProvider>
+                <Route exact path="/messages/create">
+                    <MessageForm />
                 </Route>
             </MessageProvider>
         </>

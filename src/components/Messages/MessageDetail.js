@@ -20,7 +20,7 @@ export const MessageDetail = () => {
     }, [])
 
     return (
-        <section className="animal">
+        <section className="message">
             <h3> From: {user.firstName} {user.lastName}</h3>
             <p>{message.body}</p>
         </section>
