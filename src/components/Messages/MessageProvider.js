@@ -1,5 +1,4 @@
 import React, { useState, createContext } from "react"
-import { MessageContent } from "semantic-ui-react"
 
 export const MessagesContext = createContext()
 

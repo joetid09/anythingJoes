@@ -13,6 +13,9 @@ export const Home = () => {
             <div className="buttons">
                 <button onClick={() => history.push("/Messages")}>messages</button>
             </div>
+            <div className="buttons">
+                <button onClick={() => history.push("/Friends")}>friends</button>
+            </div>
         </>
     )
 
