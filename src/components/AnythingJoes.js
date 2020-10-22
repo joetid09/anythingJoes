@@ -12,11 +12,18 @@ export const AnythingJoes = () => (
             if (localStorage.getItem("Joe_user")) {
                 return (
                     <>
-
                         <ApplicationViews />
                     </>
                 )
-            } else {
+            } else if (localStorage.getItem("Seeker_user")) {
+                return (
+                    <>
+                        <ApplicationViews />
+                    </>
+                )
+            }
+
+            else {
                 return <Redirect to="/login" />
             }
         }} />

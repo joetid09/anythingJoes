@@ -9,8 +9,14 @@ export const Login = props => {
     const existDialog = useRef()
     const history = useHistory()
 
-    const existingUserCheck = () => {
+    const existingJoeCheck = () => {
         return fetch(`http://localhost:8088/joes?email=${email.current.value}`)
+            .then(res => res.json())
+            .then(user => user.length ? user[0] : false)
+    }
+
+    const existingSeekerCheck = () => {
+        return fetch(`http://localhost:8088/seekers?email=${email.current.value}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
@@ -18,12 +24,20 @@ export const Login = props => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        existingUserCheck()
+        existingJoeCheck()
             .then(exists => {
-                if (exists) {
+                if (exists && exists.typeId === 1) {
                     localStorage.setItem("Joe_user", exists.id)
-                    history.push("/")
-                } else {
+                    history.push("/joe")
+                }
+                else if (!exists) {
+                    existingSeekerCheck()
+                        .then(exists => {
+                            localStorage.setItem("Seeker_user", exists.id)
+                            history.push("/seeker")
+                        })
+                }
+                else {
                     existDialog.current.showModal()
                 }
             })

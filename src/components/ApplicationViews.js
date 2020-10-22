@@ -1,8 +1,10 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { Message } from "semantic-ui-react"
-import { Home } from "./Home"
 
+//Landing pages
+import { JoeHome } from "./JoeHome"
+import { SeekerHome } from "./SeekerHome"
 //Messages
 import { MessageProvider } from "./Messages/MessageProvider"
 import { MessagesList } from "./Messages/MessageList"
@@ -14,14 +16,17 @@ import { FollowersProvider } from "./Friends/FollowersProvider"
 import { FollowersList } from "./Friends/FollowersList"
 
 //Users
-import { UserProvider, UsersContext } from "./User/UserProvider"
 
 export const ApplicationViews = () => {
     return (
         <>
 
-            <Route exact path="/">
-                <Home />
+            <Route exact path="/joe">
+                <JoeHome />
+            </Route>
+
+            <Route exact path="/seeker">
+                <SeekerHome />
             </Route>
 
 \            <MessageProvider>
