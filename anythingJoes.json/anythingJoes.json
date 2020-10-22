@@ -39,10 +39,16 @@
       "picture": "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2018/03/fly-oscars.jpg?resize=1000%2C600&ssl=1"
     },
     {
-      "email": "asdf@dsfmr.be",
-      "username": "asdf adf",
-      "typeId": 2,
+      "email": "yay@gmail.com",
+      "username": "success yay",
+      "typeId": 1,
       "id": 3
+    },
+    {
+      "email": "test@test.com",
+      "username": "woopety woop",
+      "typeId": 1,
+      "id": 4
     }
   ],
   "seekers": [
@@ -72,6 +78,12 @@
       "userName": "Imposter",
       "email": "ididit@amongus.com",
       "picture": "https://lh3.googleusercontent.com/VHB9bVB8cTcnqwnu0nJqKYbiutRclnbGxTpwnayKB4vMxZj8pk1220Rg-6oQ68DwAkqO=s180"
+    },
+    {
+      "email": "seek@destroy.com",
+      "username": "seeker test",
+      "typeId": 2,
+      "id": 4
     }
   ],
   "follows": [

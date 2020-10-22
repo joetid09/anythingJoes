@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
 
 
@@ -24,8 +24,8 @@ export const Register = (props) => {
 
         existingUserCheck()
             .then((userExists) => {
-                if (!userExists) {
-                    console.log(type)
+                if (!userExists && typeId === 1) {
+                    console.log({ typeId })
                     fetch("http://localhost:8088/joes", {
                         method: "POST",
                         headers: {
@@ -34,7 +34,29 @@ export const Register = (props) => {
                         body: JSON.stringify({
                             email: email.current.value,
                             username: `${firstName.current.value} ${lastName.current.value}`,
-                            typeId: +(typeId.current.id)
+                            typeId: typeId
+
+                        })
+                    })
+                        .then(_ => _.json())
+                        .then(createdUser => {
+                            if (createdUser.hasOwnProperty("id")) {
+                                localStorage.setItem("Joe_user", createdUser.id)
+                                history.push("/")
+                            }
+                        })
+                }
+                else if (!userExists && typeId === 2) {
+                    console.log({ typeId })
+                    fetch("http://localhost:8088/seekers", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            email: email.current.value,
+                            username: `${firstName.current.value} ${lastName.current.value}`,
+                            typeId: typeId
 
                         })
                     })
@@ -65,9 +87,9 @@ export const Register = (props) => {
                 <h1 className="h3 mb-3 font-weight-normal">Please Register for anythingJoes</h1>
                 <fieldset>
                     <label>What is your purpose?</label>
-                    <input ref={typeId} type="radio" name="typeId" defaultValue="1" id="1" />
+                    <input type="radio" name="typeId" value="1" onChange={e => setTypeId(1)} />
                     <label htmlFor="1">Just your average Joe here</label>
-                    <input ref={typeId} type="radio" name="typeId" value="2" id="2" />
+                    <input type="radio" name="typeId" value="2" onChange={e => setTypeId(2)} />
                     <label htmlFor="2">I'm seeking a Joe</label>
                 </fieldset>
                 <fieldset>
