@@ -6,12 +6,14 @@ export const Register = (props) => {
     const firstName = useRef()
     const lastName = useRef()
     const email = useRef()
-    const typeId = useRef()
     const conflictDialog = useRef()
     const history = useHistory()
 
+
+    const [typeId, setTypeId] = useState([])
+
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/joes?email=${email.current.value}`)
             .then(res => res.json())
             .then(user => !!user.length)
     }
@@ -23,7 +25,8 @@ export const Register = (props) => {
         existingUserCheck()
             .then((userExists) => {
                 if (!userExists) {
-                    fetch("http://localhost:8088/users", {
+                    console.log(type)
+                    fetch("http://localhost:8088/joes", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

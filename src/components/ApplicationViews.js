@@ -10,8 +10,8 @@ import { MessageDetail } from "./Messages/MessageDetail"
 import { MessageForm } from "./Messages/MessageForm"
 
 //Friends
-import { FriendsProvider } from "./Friends/FriendsProvider"
-import { FriendsList } from "./Friends/FriendsList"
+import { FollowersProvider } from "./Friends/FollowersProvider"
+import { FollowersList } from "./Friends/FollowersList"
 
 //Users
 import { UserProvider, UsersContext } from "./User/UserProvider"
@@ -42,13 +42,11 @@ export const ApplicationViews = () => {
                 </Route>
             </MessageProvider>
 
-            <UserProvider>
-                <FriendsProvider>
-                    <Route exact path="/Friends">
-                        <FriendsList />
-                    </Route>
-                </FriendsProvider>
-            </UserProvider>
+            <FollowersProvider>
+                <Route exact path="/followers">
+                    <FollowersList />
+                </Route>
+            </FollowersProvider>
         </>
     )
 }
