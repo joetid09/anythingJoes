@@ -14,7 +14,10 @@ export const SeekerHome = () => {
                 <button onClick={() => history.push("/Messages")}>messages</button>
             </div>
             <div className="buttons">
-                <button onClick={() => history.push("/followers")}>followers</button>
+                <button onClick={() => history.push("/followers")}>following</button>
+            </div>
+            <div className="buttons">
+                <button onClick={() => history.push("/joes")}>Find a local Joe</button>
             </div>
         </>
     )

@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react"
 
 export const JoesContext = createContext()
 
-export const JoesProvider = (props) => {
+export const JoeProvider = (props) => {
     // sets state when used
     const [joes, setJoes] = useState([])
 
@@ -19,7 +19,7 @@ export const JoesProvider = (props) => {
             .then(res => res.json())
     }
 
-    const addFollow = newFollow => {
+    const addJoe = newFollow => {
         return fetch("http://localhost:8088/follows?_expand=joes&_seekers", {
             method: "POST",
             headers: {
@@ -31,7 +31,7 @@ export const JoesProvider = (props) => {
     }
     return (
         <JoesContext.Provider value={{
-            joes, getJoes, getJoesById, addFollow
+            joes, getJoes, getJoesById, addJoe
         }}>
             {props.children}
         </JoesContext.Provider>

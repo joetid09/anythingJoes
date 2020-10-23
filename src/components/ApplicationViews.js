@@ -15,7 +15,9 @@ import { MessageForm } from "./Messages/MessageForm"
 import { FollowersProvider } from "./Friends/FollowersProvider"
 import { FollowersList } from "./Friends/FollowersList"
 
-//Users
+//Joes
+import { JoeProvider } from "./JoeSearch/JoeProvider"
+import { JoesList } from "./JoeSearch/JoeSearchList"
 
 export const ApplicationViews = () => {
     return (
@@ -52,6 +54,12 @@ export const ApplicationViews = () => {
                     <FollowersList />
                 </Route>
             </FollowersProvider>
+
+            <JoeProvider>
+                <Route exact path="/joes">
+                    <JoesList />
+                </Route>
+            </JoeProvider>
         </>
     )
 }

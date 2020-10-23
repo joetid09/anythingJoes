@@ -1,6 +1,5 @@
-import React, { useState, useContext, useRef, useEffect } from "react"
+import React, { useContext, useRef, useEffect } from "react"
 import { FollowersContext } from "./FollowersProvider"
-import { UsersContext } from "../User/UserProvider"
 import { FollowerCard } from "./FollowerCard"
 
 
