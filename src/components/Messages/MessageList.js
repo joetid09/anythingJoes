@@ -33,7 +33,7 @@ export const MessagesList = () => {
                         <h2>Messages</h2>
                         {
                             messages.map(message => {
-                                return <MessageCard key={message.id} user={message.user.firstName} message={message} />
+                                return <MessageCard key={message.id} user={message.joe.firstName} message={message} />
                             })
                         }
                     </div>

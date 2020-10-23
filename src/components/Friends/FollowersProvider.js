@@ -7,6 +7,8 @@ export const FollowersProvider = (props) => {
     //when setFriends is called, will set state (load friends with the given info)
     const [followers, setFollowers] = useState([])
 
+    //get follows pulls folows and allow seekers and joes to be expanded so that they can be filtered by relationships
+    //on FollowersList 
     const getFollowers = () => {
         return fetch("http://localhost:8088/follows/?_expand=seekers&_expand=joes")
             .then(res => res.json())
@@ -28,9 +30,17 @@ export const FollowersProvider = (props) => {
         })
             .then(getFollowers)
     }
+
+    const deleteFollower = followerId => {
+        return fetch(`http://localhost:8088/follows/${followerId}`, {
+            method: "DELETE"
+        })
+            .then(getFollowers)
+    }
+
     return (
         <FollowersContext.Provider value={{
-            followers, getFollowers, getFollowers, addFollower
+            followers, getFollowers, getFollowers, addFollower, deleteFollower
         }}>
             {props.children}
         </FollowersContext.Provider >

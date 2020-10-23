@@ -1,10 +1,13 @@
-import React from "react"
-import { Image, Item } from 'semantic-ui-react'
+import React, { useContext } from "react"
+import { Image, Item, Button } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom"
+import { FollowersContext } from "./FollowersProvider"
 
 
 
-export const FollowerCard = ({ seek }) => {
+export const FollowerCard = ({ seek, follower }) => {
+    const { deleteFollower } = useContext(FollowersContext)
+
     let history = useHistory()
     return (
         <>
@@ -15,6 +18,12 @@ export const FollowerCard = ({ seek }) => {
                     <Item.Content>
                         <Item.Header as="h2">{seek.userName}</Item.Header>
                         <Item.Meta>Name: {seek.firstName} {seek.lastName}</Item.Meta>
+                        <Button className="removeFollow" onClick={() => {
+                            deleteFollower(follower)
+                                .then(() =>
+                                    history.push("/followers"))
+                        }}
+                        >remove</Button>
                         {/* <Item.Description> Interests: {seek.interest.map((subject, index) => { return <div key={index}>👍 {subject}</div> })}</Item.Description> */}
                     </Item.Content>
                     {/* </button> */}
