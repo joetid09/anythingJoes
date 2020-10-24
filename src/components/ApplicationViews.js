@@ -19,19 +19,32 @@ import { FollowersList } from "./Friends/FollowersList"
 import { JoeProvider } from "./JoeSearch/JoeProvider"
 import { JoesList } from "./JoeSearch/JoeSearchList"
 
+//Posts
+import { PostsProvider } from "./Posts/PostsProvider"
+import { PostList } from "./Posts/PostsList"
+
 export const ApplicationViews = () => {
     return (
         <>
+            <FollowersProvider>
+                <PostsProvider>
+                    <Route exact path="/joe">
+                        <JoeHome />
+                        <PostList />
+                    </Route>
+                </PostsProvider>
+            </FollowersProvider>
 
-            <Route exact path="/joe">
-                <JoeHome />
-            </Route>
+            <FollowersProvider>
+                <PostsProvider>
+                    <Route exact path="/seeker">
+                        <SeekerHome />
+                        <PostList />
+                    </Route>
+                </PostsProvider>
+            </FollowersProvider>
 
-            <Route exact path="/seeker">
-                <SeekerHome />
-            </Route>
-
-\            <MessageProvider>
+            <MessageProvider>
                 <Route exact path="/Messages">
                     <MessagesList />
                 </Route>
