@@ -1,121 +1,126 @@
 {
-    "type": [
-        {
-            "id": 1,
-            "type": "Joe"
-        },
-        {
-            "id": 2,
-            "type": "Seeker"
-        }
-    ],
-    "joes": [
-        {
-            "id": 1,
-            "typeId": 1,
-            "firstName": "Josiah",
-            "lastName": "Bettle",
-            "userName": "NotJoe",
-            "email": "blahblahblah@yo.com",
-            "interest": [
-                "Cooking",
-                "Coffee",
-                "Camping"
-            ],
-            "picture": "https://thejewishlady.com/wp-content/uploads/2018/11/Hero-Portrait-jeff.jpg"
-        },
-        {
-            "id": 2,
-            "typeId": 1,
-            "firstName": "Jolemagne",
-            "lastName": "Pish",
-            "userName": "TheFly",
-            "email": "Dangers@danger.com",
-            "interest": [
-                "Genetics",
-                "Replicating machines",
-                "Distorted Faces"
-            ],
-            "picture": "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2018/03/fly-oscars.jpg?resize=1000%2C600&ssl=1"
-        }
-    ],
-    "seekers": [
-        {
-            "id": 1,
-            "typeId": 2,
-            "firstName": "Dennis",
-            "lastName": "Nedry",
-            "userName": "NuhUhUh",
-            "email": "secretword@jurassic.com",
-            "picture": "https://www.jurassicworld.com/sites/default/files/2016-10/2422_FPT_00061R_mob.jpg"
-        },
-        {
-            "id": 2,
-            "typeId": 2,
-            "firstName": "John",
-            "lastName": "Arnold",
-            "userName": "DevDude",
-            "email": "holdontoyourbutts@jurassic.com",
-            "picture": "https://static1.srcdn.com/wordpress/wp-content/uploads/2018/01/Samuel-L.-Jackson-as-Dr.-Arnold-in-Jurassic-Park.jpg"
-        },
-        {
-            "id": 3,
-            "typeId": 2,
-            "firstName": "Shouldnt",
-            "lastName": "appear",
-            "userName": "Imposter",
-            "email": "ididit@amongus.com",
-            "picture": "https://lh3.googleusercontent.com/VHB9bVB8cTcnqwnu0nJqKYbiutRclnbGxTpwnayKB4vMxZj8pk1220Rg-6oQ68DwAkqO=s180"
-        },
-        {
-            "email": "seek@destroy.com",
-            "username": "seeker test",
-            "typeId": 2,
-            "id": 4
-        }
-    ],
-    "follows": [
-        {
-            "id": 2,
-            "joesId": 1,
-            "seekersId": 2
-        },
-        {
-            "id": 3,
-            "joesId": 2,
-            "seekersId": 3
-        },
-        {
-            "joesId": 2,
-            "seekersId": 1,
-            "id": 5
-        },
-        {
-            "joesId": 1,
-            "seekersId": 1,
-            "id": 6
-        }
-    ],
-    "messages": [
-        {
-            "id": 1,
-            "subject": "hello there!",
-            "body": "I was super into your details on dancing ispum dolar etc",
-            "date": "today",
-            "userId": 1
-        },
-        {
-            "id": 2,
-            "body": "hey, how are you?",
-            "date": "today",
-            "userId": 1
-        }
-    ],
-    "posts": [
-        {
-            "id": 1,
-            "joesId": 1,
-            "content": "I hope everyone is having a great day!"
-        }
-    ]
+  "type": [
+    {
+      "id": 1,
+      "type": "Joe"
+    },
+    {
+      "id": 2,
+      "type": "Seeker"
+    }
+  ],
+  "joes": [
+    {
+      "id": 1,
+      "typeId": 1,
+      "firstName": "Josiah",
+      "lastName": "Bettle",
+      "userName": "NotJoe",
+      "email": "blahblahblah@yo.com",
+      "interest": [
+        "Cooking",
+        "Coffee",
+        "Camping"
+      ],
+      "picture": "https://thejewishlady.com/wp-content/uploads/2018/11/Hero-Portrait-jeff.jpg"
+    },
+    {
+      "id": 2,
+      "typeId": 1,
+      "firstName": "Jolemagne",
+      "lastName": "Pish",
+      "userName": "TheFly",
+      "email": "Dangers@danger.com",
+      "interest": [
+        "Genetics",
+        "Replicating machines",
+        "Distorted Faces"
+      ],
+      "picture": "https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2018/03/fly-oscars.jpg?resize=1000%2C600&ssl=1"
+    }
+  ],
+  "seekers": [
+    {
+      "id": 1,
+      "typeId": 2,
+      "firstName": "Dennis",
+      "lastName": "Nedry",
+      "userName": "NuhUhUh",
+      "email": "secretword@jurassic.com",
+      "picture": "https://www.jurassicworld.com/sites/default/files/2016-10/2422_FPT_00061R_mob.jpg"
+    },
+    {
+      "id": 2,
+      "typeId": 2,
+      "firstName": "John",
+      "lastName": "Arnold",
+      "userName": "DevDude",
+      "email": "holdontoyourbutts@jurassic.com",
+      "picture": "https://static1.srcdn.com/wordpress/wp-content/uploads/2018/01/Samuel-L.-Jackson-as-Dr.-Arnold-in-Jurassic-Park.jpg"
+    },
+    {
+      "id": 3,
+      "typeId": 2,
+      "firstName": "Shouldnt",
+      "lastName": "appear",
+      "userName": "Imposter",
+      "email": "ididit@amongus.com",
+      "picture": "https://lh3.googleusercontent.com/VHB9bVB8cTcnqwnu0nJqKYbiutRclnbGxTpwnayKB4vMxZj8pk1220Rg-6oQ68DwAkqO=s180"
+    },
+    {
+      "email": "seek@destroy.com",
+      "username": "seeker test",
+      "typeId": 2,
+      "id": 4
+    }
+  ],
+  "follows": [
+    {
+      "id": 2,
+      "joesId": 1,
+      "seekersId": 2
+    },
+    {
+      "id": 3,
+      "joesId": 2,
+      "seekersId": 3
+    },
+    {
+      "joesId": 2,
+      "seekersId": 1,
+      "id": 5
+    },
+    {
+      "joesId": 1,
+      "seekersId": 1,
+      "id": 6
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "subject": "hello there!",
+      "body": "I was super into your details on dancing ispum dolar etc",
+      "date": "today",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "body": "hey, how are you?",
+      "date": "today",
+      "userId": 1
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "joesId": 1,
+      "content": "I hope everyone is having a great day!"
+    },
+    {
+      "joesId": 2,
+      "content": "howdy",
+      "id": 2
+    }
+  ]
 }

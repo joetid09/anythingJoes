@@ -13,14 +13,14 @@ export const PostsProvider = (props) => {
     }
 
     const addPosts = (newPost) => {
-        return fetch("http://localhost:8088/follows?_expand=seekers&_expand=joes", {
+        return fetch("http://localhost:8088/posts", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newPost)
         })
-            .then(getPosts)
+
     }
 
     const deletePost = postId => {

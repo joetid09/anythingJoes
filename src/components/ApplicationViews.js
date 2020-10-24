@@ -22,6 +22,7 @@ import { JoesList } from "./JoeSearch/JoeSearchList"
 //Posts
 import { PostsProvider } from "./Posts/PostsProvider"
 import { PostList } from "./Posts/PostsList"
+import { PostsForm } from "./Posts/PostsForm"
 
 export const ApplicationViews = () => {
     return (
@@ -43,6 +44,12 @@ export const ApplicationViews = () => {
                     </Route>
                 </PostsProvider>
             </FollowersProvider>
+
+            <PostsProvider>
+                <Route exact path="/newPost">
+                    <PostsForm />
+                </Route>
+            </PostsProvider>
 
             <MessageProvider>
                 <Route exact path="/Messages">
