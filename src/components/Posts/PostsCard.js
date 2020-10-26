@@ -1,11 +1,12 @@
 import React from "react"
-import { Image, Item } from 'semantic-ui-react'
+import { Button, Image, Item } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom"
 
 
 
-export const PostsCard = ({ post }) => {
+export const PostsCard = ({ post, poster }) => {
     let history = useHistory()
+
     return (
         <>
             < Item.Group >

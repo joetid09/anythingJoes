@@ -19,18 +19,28 @@ export const PostList = () => {
                 <div className="postsContainer">
                     {
                         posts.map((post, index) => {
-                            if (joeUser)
-                                return <PostsCard key={index} post={post} />
+                            if (joeUser === post.joes.id) {
+                                return (<Grid.Row>
+                                    <PostsCard key={index} post={post} poster={joeUser}
+                                    />
+                                    <Button onClick={e => deletePost(post.id)}>delete</Button>
+                                    <Button onClick={() => {
+                                        history.push(`/posts/edit/${post.id}`)
+                                    }}>Edit</Button>
+                                </Grid.Row>)
+
+                            } else {
+                                return (<Grid.Row>
+                                    <PostsCard key={index} post={post} poster={joeUser} />
+                                </Grid.Row>)
+
+                            }
                         })
                     }
-                </div>
-            </Grid.Row>
-            <Grid.Row>
-                <div className="postsContainer">
-                    <Button onClick={e => history.push("/newPost")}>New Post</Button>
-                </div>
 
+                </div>
             </Grid.Row>
         </Grid>
+
     )
 }

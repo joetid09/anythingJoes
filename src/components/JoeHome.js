@@ -10,6 +10,11 @@ export const JoeHome = () => {
                 <p className="lead text-light">Getting people in touched with Joes since 2020</p>
             </div>
 
+            <div className="What should the people hear today?">
+                <button onClick={e => history.push("/newPost")} > Post it!
+                </button>
+            </div>
+
             <div className="buttons">
                 <button onClick={() => history.push("/Messages")}>messages</button>
             </div>

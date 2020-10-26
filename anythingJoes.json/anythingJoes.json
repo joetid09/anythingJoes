@@ -76,11 +76,6 @@
   ],
   "follows": [
     {
-      "id": 2,
-      "joesId": 1,
-      "seekersId": 2
-    },
-    {
       "id": 3,
       "joesId": 2,
       "seekersId": 3
@@ -92,8 +87,13 @@
     },
     {
       "joesId": 1,
-      "seekersId": 1,
+      "seekersId": 2,
       "id": 6
+    },
+    {
+      "joesId": 2,
+      "seekersId": 2,
+      "id": 7
     }
   ],
   "messages": [
@@ -113,14 +113,19 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "joesId": 1,
-      "content": "I hope everyone is having a great day!"
+      "id": 3,
+      "content": "uh oh",
+      "joesId": 1
     },
     {
-      "joesId": 2,
-      "content": "howdy",
-      "id": 2
+      "id": 4,
+      "content": "editing /deleting",
+      "joesId": 2
+    },
+    {
+      "id": 5,
+      "content": "we workin???",
+      "joesId": 1
     }
   ]
 }

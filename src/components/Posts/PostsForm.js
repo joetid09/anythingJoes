@@ -1,44 +1,78 @@
-import React, { useContext, useEffect, useRef } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { PostsContext } from "./PostsProvider"
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 export const PostsForm = () => {
-    const { posts, addPosts, getPosts } = useContext(PostsContext)
+    const { addPosts, updatePost, getPostById } = useContext(PostsContext)
+    //creates empty boxes that will be filled when user inputs data
+    const [post, setPost] = useState({})
+    //keeps button from being active until data received
+    const [isLoading, setIsLoading] = useState(true);
+
+    const { postId } = useParams()
+    const history = useHistory()
+
+    const handleControlledInputChange = (event) => {
+        //creating copy of post before resetting state
+        const newPost = { ...post }
+        //take new copy and add new value 
+        newPost[event.target.name] = event.target.value
+
+    }
 
     //getting posts
     useEffect(() => {
-        getPosts()
+        if (postId) {
+            getPostById(postId)
+                .then(post => {
+                    setPost(post)
+                    setIsLoading(false)
+                })
+        } else {
+            setIsLoading(false)
+        }
     }, [])
 
-    //creates empty boxes that will be filled when user inputs data
     const postsBody = useRef(null)
-
     const createPost = () => {
         const joesId = +localStorage.getItem("Joe_user")
+        setIsLoading(true)
+        if (postId) {
+            updatePost({
+                id: post.id,
+                content: postsBody.current.value,
+                joesId: joesId
+            }).then(() => history.push("/joe"))
+        } else {
+            addPosts({
+                id: joesId,
+                content: postsBody.current.value,
+                joesId: joesId
+            })
+                .then(() => history.push("/joe"))
 
-        addPosts({
-            joesId: joesId,
-            content: postsBody.current.value
-        })
-            .then(() => history.push("/joe"))
-
+        }
     }
-    const history = useHistory()
 
     return (
         <form className="messageForm">
             <fieldset className="postBox">
                 <label>What's on your mind?</label>
-                <textarea ref={postsBody} name="postsBody" />
+                <textarea
+                    ref={postsBody}
+                    name="postsBody"
+                    onChange={handleControlledInputChange} />
             </fieldset>
             <button type="submit"
+                disabled={isLoading}
                 onClick={event => {
                     event.preventDefault()
                     createPost()
                 }}
                 className="composeMessageButton">
-                Send
-                </button>
+                {postId ? <> Save Post</> : <>Add Post</>}
+            </button>
+
 
         </form >
 

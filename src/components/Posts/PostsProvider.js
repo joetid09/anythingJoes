@@ -7,7 +7,7 @@ export const PostsProvider = (props) => {
     const [posts, setPosts] = useState([])
 
     const getPosts = () => {
-        return fetch(" http://localhost:8088/posts/?_expand=joes")
+        return fetch("http://localhost:8088/posts/?_expand=joes")
             .then(res => res.json())
             .then(setPosts)
     }
@@ -24,15 +24,30 @@ export const PostsProvider = (props) => {
     }
 
     const deletePost = postId => {
-        return fetch(`http://localhost:8088/follows/${postId}`, {
+        return fetch(`http://localhost:8088/posts/${postId}`, {
             method: "DELETE"
         })
             .then(getPosts)
     }
 
+    const getPostById = id => {
+        return fetch(`http://localhost:8088/posts/${id}`)
+            .then(res => res.json())
+    }
+
+    const updatePost = post => {
+        return fetch(`http://localhost:8088/posts/${post.id}?_expand=joes`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(post)
+        })
+    }
+
     return (
         <PostsContext.Provider value={{
-            posts, getPosts, deletePost, addPosts
+            posts, getPosts, deletePost, addPosts, updatePost, getPostById
         }}>
             {props.children}
         </PostsContext.Provider>
