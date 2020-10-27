@@ -23,11 +23,13 @@ export const MessageForm = () => {
     const composeMessage = () => {
         const toUserId = parseInt(toUser.current.value)
         const fromUserId = parseInt(localStorage.value)
+        const dateTime = new Date()
 
         addMessage({
             toUserId,
             fromUserId,
-            messageBody: messageBody.current.value
+            messageBody: messageBody.current.value,
+            sent: dateTime.toUTCString()
         })
             .then(() => history.push("/MessagesList"))
 

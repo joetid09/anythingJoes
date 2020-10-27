@@ -17,7 +17,7 @@ export const MessagesList = () => {
             <Grid celled>
                 <Grid.Row>
                     <Grid.Column width={6}>
-                        <Button animated>
+                        <Button animated onClick={() => history.push("/messages/create")}>
                             <Button.Content visible>
                                 <Icon name='pencil' />
                             </Button.Content>
@@ -33,7 +33,7 @@ export const MessagesList = () => {
                         <h2>Messages</h2>
                         {
                             messages.map(message => {
-                                return <MessageCard key={message.id} user={message.joe.firstName} message={message} />
+                                return <MessageCard key={message.id} user={message.joesId.firstName} message={message} />
                             })
                         }
                     </div>

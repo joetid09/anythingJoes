@@ -99,6 +99,8 @@
   "messages": [
     {
       "id": 1,
+      "joesId": 2,
+      "seekersId": 1,
       "subject": "hello there!",
       "body": "I was super into your details on dancing ispum dolar etc",
       "date": "today",
@@ -106,9 +108,18 @@
     },
     {
       "id": 2,
+      "joesId": 2,
+      "seekersId": 1,
       "body": "hey, how are you?",
       "date": "today",
       "userId": 1
+    },
+    {
+      "toUserId": null,
+      "fromUserId": null,
+      "messageBody": "hey jed",
+      "sent": "Mon, 26 Oct 2020 20:59:23 GMT",
+      "id": 3
     }
   ],
   "posts": [
