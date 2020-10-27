@@ -8,6 +8,7 @@ export const PostList = () => {
     const { posts, getPosts, deletePost, addPosts } = useContext(PostsContext)
     const history = useHistory()
     const joeUser = +localStorage.getItem("Joe_user")
+    const seekerUser = +localStorage.getItem("Seeker_user")
 
     useEffect(() => {
         getPosts()
@@ -19,7 +20,7 @@ export const PostList = () => {
                 <div className="postsContainer">
                     {
                         posts.map((post, index) => {
-                            if (joeUser === post.joes.id) {
+                            if (joeUser && joeUser === post.user.id) {
                                 return (<Grid.Row>
                                     <PostsCard key={index} post={post} poster={joeUser}
                                     />

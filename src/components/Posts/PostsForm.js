@@ -41,13 +41,12 @@ export const PostsForm = () => {
             updatePost({
                 id: post.id,
                 content: postsBody.current.value,
-                joesId: joesId
+                userId: joesId
             }).then(() => history.push("/joe"))
         } else {
             addPosts({
-                id: joesId,
                 content: postsBody.current.value,
-                joesId: joesId
+                userId: joesId
             })
                 .then(() => history.push("/joe"))
 

@@ -12,7 +12,7 @@ export const PostsCard = ({ post, poster }) => {
             < Item.Group >
                 <Item href="">
                     <Item.Content>
-                        <Item.Meta><h5>{post.joes.userName}:</h5>{post.content}</Item.Meta>
+                        <Item.Meta><h5>{post.user.userName}:</h5>{post.content}</Item.Meta>
                     </Item.Content>
                 </Item >
             </Item.Group >

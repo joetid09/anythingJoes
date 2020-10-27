@@ -10,7 +10,7 @@ export const FollowersProvider = (props) => {
     //get follows pulls folows and allow seekers and joes to be expanded so that they can be filtered by relationships
     //on FollowersList 
     const getFollowers = () => {
-        return fetch("http://localhost:8088/follows/?_expand=seekers&_expand=joes")
+        return fetch("http://localhost:8088/follows/?_expand=user")
             .then(res => res.json())
             .then(setFollowers)
     }

@@ -7,7 +7,7 @@ export const PostsProvider = (props) => {
     const [posts, setPosts] = useState([])
 
     const getPosts = () => {
-        return fetch("http://localhost:8088/posts/?_expand=joes")
+        return fetch("http://localhost:8088/posts/?_expand=user")
             .then(res => res.json())
             .then(setPosts)
     }
@@ -36,7 +36,7 @@ export const PostsProvider = (props) => {
     }
 
     const updatePost = post => {
-        return fetch(`http://localhost:8088/posts/${post.id}?_expand=joes`, {
+        return fetch(`http://localhost:8088/posts/${post.id}?_expand=user`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
