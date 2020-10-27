@@ -99,16 +99,17 @@
   "messages": [
     {
       "id": 1,
-      "subject": "hello there!",
+      "joesId": 1,
+      "seekersId": 3,
       "body": "I was super into your details on dancing ispum dolar etc",
-      "date": "today",
-      "userId": 1
+      "date": "today"
     },
     {
       "id": 2,
+      "joesId": 1,
+      "seekersId": 3,
       "body": "hey, how are you?",
-      "date": "today",
-      "userId": 1
+      "date": "today"
     }
   ],
   "posts": [
@@ -123,8 +124,8 @@
       "joesId": 2
     },
     {
-      "id": 5,
-      "content": "we workin???",
+      "id": 1,
+      "content": "Styling time!",
       "joesId": 1
     }
   ]

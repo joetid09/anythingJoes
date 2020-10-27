@@ -10,10 +10,10 @@ export const MessageCard = ({ message }) => {
         <>
             < Item.Group >
                 <Item href="">
-                    <Item.Image size="tiny" src={message.user.picture} />
+                    <Item.Image size="tiny" src={message.joes.picture} />
                     <button onClick={() => history.push(`/messages/detail/${message.id}`)}>
                         <Item.Content>
-                            <Item.Header as="h2">Message from: {message.user.userName}</Item.Header>
+                            <Item.Header as="h2">Message from: {message.joes.userName}</Item.Header>
                             <Item.Meta>Received: {message.date}</Item.Meta>
                             <Item.Description> {message.subject}</Item.Description>
                         </Item.Content>

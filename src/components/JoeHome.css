@@ -1,0 +1,17 @@
+.wholePage,
+.messages {
+    color: #FF6700;
+}
+
+.banner,
+.media {
+    background-image: url("https://www.theswiftlift.com/wp-content/uploads/2019/06/Camo-Background-360x240.jpg")
+}
+
+.aboutMe {
+    background-color: olive;
+}
+
+.convoButton {
+    background-color: #70543e;
+}

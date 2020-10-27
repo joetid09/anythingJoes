@@ -1,7 +1,7 @@
 import React from "react"
 import { Button, Image, Item } from 'semantic-ui-react'
 import { useHistory } from "react-router-dom"
-
+import "../JoeHome.css"
 
 
 export const PostsCard = ({ post, poster }) => {

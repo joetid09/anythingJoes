@@ -6,7 +6,7 @@ import { Grid, Image, Button, Icon } from "semantic-ui-react"
 
 export const MessagesList = () => {
     const { messages, getMessages } = useContext(MessagesContext)
-
+    const activeUser = +localStorage.getItem("Joe_user")
     useEffect(() => {
         getMessages()
     }, [])
@@ -32,9 +32,10 @@ export const MessagesList = () => {
 
                         <h2>Messages</h2>
                         {
-                            messages.map(message => {
-                                return <MessageCard key={message.id} user={message.joe.firstName} message={message} />
-                            })
+                            messages.sort().filter(message => message.joesId === activeUser)
+                                .map(message => {
+                                    return <MessageCard key={message.id} user={message.joes.firstName} message={message} />
+                                })
                         }
                     </div>
 

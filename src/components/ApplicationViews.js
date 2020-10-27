@@ -31,7 +31,6 @@ export const ApplicationViews = () => {
                 <PostsProvider>
                     <Route exact path="/joe">
                         <JoeHome />
-                        <PostList />
                     </Route>
                 </PostsProvider>
             </FollowersProvider>
@@ -39,8 +38,8 @@ export const ApplicationViews = () => {
             <FollowersProvider>
                 <PostsProvider>
                     <Route exact path="/seeker">
-                        <SeekerHome />
                         <PostList />
+                        <SeekerHome />
                     </Route>
                 </PostsProvider>
             </FollowersProvider>
