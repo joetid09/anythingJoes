@@ -12,22 +12,20 @@ export const MessageForm = () => {
     }, [])
 
     //creates empty boxes that will be filled when user inputs data
-    const toUser = useRef(null)
-    const messageBody = useRef(null)
+    const to = useRef(null)
     const fromUser = useRef(null)
+    const body = useRef(null)
 
     useEffect(() => {
         getMessageById()
     }, [])
 
     const composeMessage = () => {
-        const toUserId = parseInt(toUser.current.value)
-        const fromUserId = parseInt(localStorage.value)
 
         addMessage({
-            toUserId,
-            fromUserId,
-            messageBody: messageBody.current.value
+            to,
+            from: +localStorage.getItem("Joe_user"),
+            body: body.current.value
         })
             .then(() => history.push("/MessagesList"))
 
@@ -39,13 +37,13 @@ export const MessageForm = () => {
             <fieldset class="toBox">
                 <div className="addressBox">
                     <label>To : </label>
-                    <input type="text" ref={toUser} name="userName" />
+                    <input type="text" ref={to} name="userName" />
                 </div>
             </fieldset>
 
             <fieldset class="messageBox">
                 <label>Message:</label>
-                <textarea ref={messageBody} name="messageBody" />
+                <textarea ref={body} name="messageBody" />
             </fieldset>
             <button type="submit"
                 onClick={event => {

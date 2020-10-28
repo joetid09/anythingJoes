@@ -25,7 +25,7 @@ export const Login = props => {
                     history.push("/joe")
                 }
                 else if (exists && exists.typeId === 2) {
-                    localStorage.setItem("User", exists.id)
+                    localStorage.setItem("Joe_user", exists.id)
                     history.push("/seeker")
                 }
             })

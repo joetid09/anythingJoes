@@ -4,11 +4,11 @@ export const UsersContext = createContext()
 
 export const UserProvider = (props) => {
     // sets state when used
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState()
 
     // fetch call to gather all messages
     const getUsers = () => {
-        return fetch("http://localhost:8088/users?_expand=interests")
+        return fetch("http://localhost:8088/users")
             .then(res => res.json())
             .then(setUsers)
     }

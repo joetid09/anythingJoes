@@ -17,7 +17,8 @@ export const MessagesList = () => {
             <Grid celled>
                 <Grid.Row>
                     <Grid.Column width={6}>
-                        <Button animated>
+                        <Button animated
+                            onClick={e => history.push("/messages/create")}>
                             <Button.Content visible>
                                 <Icon name='pencil' />
                             </Button.Content>
@@ -32,15 +33,15 @@ export const MessagesList = () => {
 
                         <h2>Messages</h2>
                         {
-                            messages.sort().filter(message => message.joesId === activeUser)
-                                .map(message => {
-                                    return <MessageCard key={message.id} user={message.joes.firstName} message={message} />
-                                })
+                            messages.map((message, index) => {
+                                if (activeUser === message.to)
+                                    return <MessageCard key={index} message={message} />
+                            })
                         }
                     </div>
 
                 </Grid.Row>
-            </Grid>
+            </Grid >
         </>
     )
 }

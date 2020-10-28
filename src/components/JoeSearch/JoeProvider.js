@@ -8,7 +8,7 @@ export const JoeProvider = (props) => {
 
     // fetch call to gather all Joes
     const getJoes = () => {
-        return fetch("http://localhost:8088/joes")
+        return fetch("http://localhost:8088/users")
             .then(res => res.json())
             .then(setJoes)
     }

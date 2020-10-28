@@ -69,38 +69,51 @@
     "follows": [
         {
             "id": 3,
-            "typeId": 2,
-            "userId2": 3
+            "userId": 2,
+            "following": 3
         },
         {
-            "userId1": 2,
-            "userId2": 1,
+            "following": 2,
+            "userId": 1,
             "id": 5
         },
         {
-            "userId1": 1,
-            "userId2": 2,
+            "following": 1,
+            "userId": 2,
             "id": 6
         },
         {
-            "userId1": 2,
-            "userId2": 2,
+            "following": 2,
+            "userId": 2,
             "id": 7
+        },
+        {
+            "following": 5,
+            "userId": 3,
+            "id": 9
+        },
+        {
+            "userId": 5,
+            "following": 3,
+            "id": 10
+        },
+        {
+            "userId": 4,
+            "following": 3,
+            "id": 11
+        },
+        {
+            "userId": 1,
+            "following": 3,
+            "id": 12
         }
     ],
     "messages": [
         {
             "id": 1,
-            "joesId": 1,
-            "seekersId": 3,
+            "to": 3,
+            "userId": 2,
             "body": "I was super into your details on dancing ispum dolar etc",
-            "date": "today"
-        },
-        {
-            "id": 2,
-            "joesId": 1,
-            "seekersId": 3,
-            "body": "hey, how are you?",
             "date": "today"
         }
     ],
@@ -111,14 +124,14 @@
             "userId": 2
         },
         {
-            "id": 1,
-            "content": "test test",
-            "userId": 1
-        },
-        {
             "content": "stupid id",
             "userId": 1,
             "id": 5
+        },
+        {
+            "content": "Hey guys, It'd be a great day for frisbee golfing!",
+            "userId": 1,
+            "id": 6
         }
     ]
 }

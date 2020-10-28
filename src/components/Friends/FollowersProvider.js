@@ -16,12 +16,12 @@ export const FollowersProvider = (props) => {
     }
 
     const getFollowersId = id => {
-        return fetch(`http://localhost:8088/follows/${id}?_expand=seeker`)
+        return fetch(`http://localhost:8088/follows/${id}?_expand=user`)
             .then(res => res.json())
     }
 
     const addFollower = newFollower => {
-        return fetch("http://localhost:8088/follows?_expand=seekers&_expand=joes", {
+        return fetch("http://localhost:8088/follows?_expand=user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

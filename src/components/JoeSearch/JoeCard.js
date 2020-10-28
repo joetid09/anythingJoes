@@ -11,8 +11,8 @@ export const JoeCard = ({ joe }) => {
 
     const CreateFollowing = ({ joe }) => {
         addJoe({
-            joesId: +joe.id,
-            seekersId: +localStorage.getItem("Seeker_user")
+            userId: +joe.id,
+            following: +localStorage.getItem("Joe_user")
         })
     }
     return (

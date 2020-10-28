@@ -5,7 +5,7 @@ import { JoeCard } from "./JoeCard"
 
 export const JoesList = () => {
     const { joes, getJoes, getJoesById, addFollow } = useContext(JoesContext)
-    const activeSeeker = +localStorage.getItem("Seeker_user")
+    const activeSeeker = +localStorage.getItem("Joe_user")
     const nameSearched = useRef("")
 
 
@@ -28,10 +28,10 @@ export const JoesList = () => {
                     //then displays a corresponding seekers ID that is in the  same object
                     joes.map((joe, index) => {
                         //same function as above, only for someone logged in as seeker, and shows who they follow
-                        if (activeSeeker) {
+                        if (activeSeeker !== joe.id) {
                             console.log(activeSeeker)
                             return <JoeCard key={index} joe={joe} />
-                        }
+                        } else { }
                     })
                 }
             </div>
