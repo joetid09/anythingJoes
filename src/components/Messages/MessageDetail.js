@@ -3,7 +3,7 @@ import { MessagesContext } from "./MessageProvider"
 import { useParams, useHistory } from "react-router-dom"
 
 export const MessageDetail = () => {
-    const { deleteMessage, getMessageById } = useContext(MessagesContext)
+    const { messages, deleteMessage, getMessageById, getMessages } = useContext(MessagesContext)
 
     const [message, setMessage] = useState({})
     const [user, setUser] = useState({})
@@ -21,8 +21,12 @@ export const MessageDetail = () => {
 
     return (
         <section className="message">
-            <h3> From: {user.firstName} {user.lastName}</h3>
-            <p>{message.body}</p>
+            {
+                messages.map(message => {
+                    return <div>{message.body}</div>
+                })
+            }
+
         </section>
     )
 }

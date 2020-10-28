@@ -4,7 +4,8 @@ export const MessagesContext = createContext()
 
 export const MessageProvider = (props) => {
     // sets state when used
-    const [messages, setMessages] = useState([])
+
+    const [messages, setMessages] = useState([0])
 
     // fetch call to gather all messages
     const getMessages = () => {

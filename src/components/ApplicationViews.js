@@ -71,11 +71,13 @@ export const ApplicationViews = () => {
                 </Route>
             </MessageProvider>
 
-            <MessageProvider>
-                <Route exact path="/messages/create">
-                    <MessageForm />
-                </Route>
-            </MessageProvider>
+            <FollowersProvider>
+                <MessageProvider>
+                    <Route exact path="/messages/create">
+                        <MessageForm />
+                    </Route>
+                </MessageProvider>
+            </FollowersProvider>
 
             <FollowersProvider>
                 <UserProvider>

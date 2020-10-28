@@ -11,11 +11,11 @@ export const MessageCard = ({ message }) => {
             < Item.Group >
                 <Item href="">
                     <Item.Image size="tiny" src={message.user.picture} />
-                    <button onClick={() => history.push(`/messages/detail/${message.user.id}`)}>
+                    <button onClick={() => history.push(`/messages/detail/${message.to}`)}>
                         <Item.Content>
                             <Item.Header as="h2">Message from: {message.user.userName}</Item.Header>
                             <Item.Meta>Received: {message.date}</Item.Meta>
-                            <Item.Description> {message.subject}</Item.Description>
+                            <Item.Description> {message.body}</Item.Description>
                         </Item.Content>
                     </button>
                 </Item >

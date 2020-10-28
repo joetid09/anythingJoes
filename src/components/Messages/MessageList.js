@@ -7,6 +7,7 @@ import { Grid, Image, Button, Icon } from "semantic-ui-react"
 export const MessagesList = () => {
     const { messages, getMessages } = useContext(MessagesContext)
     const activeUser = +localStorage.getItem("Joe_user")
+
     useEffect(() => {
         getMessages()
     }, [])
